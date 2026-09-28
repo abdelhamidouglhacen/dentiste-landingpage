@@ -101,7 +101,7 @@ body {
 
 .fr-navbar{
   position:fixed; top:0; left:0; right:0; z-index:100;
-  display:flex; align-items:center; justify-content:space-between;
+  display:grid; grid-template-columns:1fr auto 1fr; align-items:center;
   padding:22px 5vw;
   transition: background .45s ease, backdrop-filter .45s ease, box-shadow .45s ease, padding .35s ease, border-color .45s ease;
   background:transparent; border-bottom:1px solid transparent;
@@ -113,7 +113,9 @@ body {
 }
 .fr-logo{ display:flex; align-items:center; gap:10px; font-family:'Fraunces',serif; font-size:19px; font-weight:500; }
 .fr-logo-mark{ width:30px; height:30px; border-radius:9px; background:linear-gradient(135deg, var(--teal) 0%, var(--gold) 100%); display:inline-block; flex-shrink:0; }
-.fr-nav-links{ display:flex; gap:6px; background: var(--glass); backdrop-filter: blur(10px); border:1px solid rgba(255,255,255,.6); padding:6px; border-radius:999px; box-shadow: 0 8px 24px -14px rgba(0,0,0,.08); }
+.fr-navbar > *{ justify-self:start; }
+.fr-navbar > *:nth-child(3){ justify-self:end; }
+.fr-nav-links{ grid-column:2; justify-self:center; display:flex; gap:6px; background: var(--glass); backdrop-filter: blur(10px); border:1px solid rgba(255,255,255,.6); padding:6px; border-radius:999px; box-shadow: 0 8px 24px -14px rgba(0,0,0,.08); }
 .fr-nav-links a{ padding:9px 18px; border-radius:999px; font-size:14px; font-weight:500; color:var(--ink-soft); transition: background .25s ease, color .25s ease; }
 .fr-nav-links a:hover{ background:rgba(13,148,136,.08); color:var(--teal-deep); }
 .fr-btn-outline{ padding:11px 24px; border-radius:999px; font-size:14px; font-weight:600; border:1.5px solid var(--ink); color:var(--ink); transition: border-color .3s ease, color .3s ease, background .3s ease; background:none; }
